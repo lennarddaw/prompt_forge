@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../core/constants/strings.dart';
+import '../features/prompt_builder/application/prompt_provider.dart';
 import 'routes.dart';
 
 class PromptForgeApp extends StatelessWidget {
@@ -9,7 +10,9 @@ class PromptForgeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [], // später für State Management
+      providers: [
+        ChangeNotifierProvider(create: (_) => PromptProvider()),
+      ],
       child: MaterialApp(
         title: appTitle,
         theme: ThemeData(
